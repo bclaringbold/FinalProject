@@ -78,7 +78,7 @@ router.get('/logout', function (req, res){
   res.redirect('/');
 });
 
-/* Show Todo List Page */
+/* Show Survey List Page */
 router.get('/surveylist', requireAuth, function (req, res, next) {
 
         res.render('surveylist', {

@@ -27,10 +27,10 @@ router.post('/', requireAuth, function(req, res, next){
 
 // Read All Surveys
 router.get('/', requireAuth, function(req, res, next){
-   survey.find(function(err, todos){
+   survey.find(function(err, surveys){
        if (err) {
          return next(err);}
-       res.json(todos);
+       res.json(surveys);
    }); 
 });
 

@@ -19,7 +19,7 @@
     }]);
     
     // Controllers ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    app.controller('SurveysController', ['$scope', 'Surveys', function($scope, Surveys) {
+    app.controller('SurveyController', ['$scope', 'Surveys', function($scope, Surveys) {
         $scope.editing = [];
         $scope.username = '';
         $scope.userSurveys = [];
