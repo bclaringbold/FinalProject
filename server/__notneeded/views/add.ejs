@@ -1,0 +1,30 @@
+<% include ../partials/header.ejs %>
+
+<main class="container">
+    <h1>Add a New Contact</h1>
+       <div class="col-sm-4">
+        <form method="post">
+
+            <fieldset class="form-group">
+                <label for="displayName">Display Name: *</label>
+                <input name="displayName" type="text" class="form-control" required autofocus />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="email">Email: *</label>
+                <input name="email" type="email" class="form-control" required />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="contactNumber">Contact Number: *</label>
+                <input name="contactNumber" type="contactNumber" class="form-control" required />
+            </fieldset>
+                        
+            <fieldset class="form-group text-right">
+                <button type="submit" class="btn btn-success" value="Submit"/><i class="fa fa-save"></i> Submit</button>
+            </fieldset>
+        </form>
+    </div>
+
+</main>
+
+<% include ../partials/boot.ejs %>
+<% include ../partials/footer.ejs %>

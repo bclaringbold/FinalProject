@@ -1,0 +1,93 @@
+<% include partials/header.ejs %>
+
+        <div class="container">
+            <ng-view></ng-view>
+        </div> <!-- container -->
+
+        <script type="text/ng-template" id="/surveys.html">
+            
+            <div class="panel panel-primary" ng-init="setUserName('<%= username %>')">
+                <div class="panel-heading">
+                    <div class="panel-title"><%= title %> for <%= displayName %></div>
+                </div> <!-- panel-heading -->
+                <div class="panel-body">
+                    <h4><span class="badge">{{remainingSurveys()}}</span> To Do's of <span class="badge">{{totalSurveys()}}</span> Remaining</h4>
+                    
+                    <h4>Search To Do's:</h4>
+                    <input type="text" ng-model="search.name" id="searchSurvey" placeholder="To Do's to find" class="form-control">
+                    <br>
+                    <ul class="list-group">
+                        <li class="list-group-item active">Current To Do's</li>
+                        <li ng-repeat="survey in surveys | filter: search | filter: {username: '<%= username %>'}" class="list-group-item">
+                            <div class="btn-group">
+                            <button type="button" title="Edit" ng-show="!editing[$index]" ng-click="edit($index)" class="btn btn-primary "><i class="fa fa-pencil-square-o"></i></button>
+                            </div> 
+                            
+                            <!-- btn-group -->
+                            <span ng-show="editing[$index]">Complete? </span>
+                            <input type="checkbox" ng-model="survey.completed" ng-change="update($index)">
+                            <span class="surveys">
+                            <a ng-show="!editing[$index]" href="#/{{survey._id}}" class="completed-{{survey.completed}}">{{survey.name}}</a></span>
+
+                            <input ng-show="editing[$index]" type="text" ng-model="survey.name" class="form-control">
+                            
+                            <div class="btn-group">
+                            <br>
+                            <p>
+                                <button type="button" title="Update" ng-show="editing[$index]" ng-click="update($index)" class="btn btn-success"><i class="fa fa-save"></i> Update</button>
+                                <button type="button" title="Delete" ng-show="editing[$index]" ng-click="remove($index)" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
+                                <button type="button" title="Cancel" ng-show="editing[$index]" ng-click="cancel($index)" class="btn btn-default"><i class="fa fa-undo"></i> Cancel</button>
+                            </p>
+                            </div> <!-- btn-group -->
+                         </li>
+                    </ul>
+
+                   <div class="list-group">
+                    <div class="list-group-item active">Create a New To Do</div>
+                    <div class="list-group-item">
+                    <input type="text" ng-model="newSurvey" id="newSurvey" placeholder="Add a new To Do" class="form-control">
+                    <br>
+                    <button type="button" title="Create New" ng-click="save()" class="btn btn-success"><i class="fa fa-plus"></i> Create</button>
+                    </div>
+                   </div>
+                </div> <!-- panel-body -->
+            </div> <!-- panel panel-default -->
+        </script>
+
+        <script type="text/ng-template" id="/surveyDetails.html">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title"><stong>{{ survey.name }}</strong></div>
+                </div><!-- panel-heading -->
+                
+                <div class="panel-body">
+                     
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong>Notes</strong></div>
+                        <div class="panel-body">
+                                <textarea ng-model="survey.note" class="form-control"></textarea>
+                        </div> <!-- nested-panel-body -->
+                        
+                        <div class="panel-footer">
+                        <h4><strong>Complete? <input type="checkbox" ng-model="survey.completed"></stong></h4>
+                        </div>
+                   </div> <!-- nested-panel panel-default -->
+                   
+                   <div class="btn-group">
+                   <p>
+                   <button type="button" title="Save" ng-click="update()" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
+                   <button type="button" title="Delete" ng-click="remove()" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
+                   <button type="button" title="Cancel" ng-click="cancel()" class="btn btn-default"><i class="fa fa-undo"></i> Cancel</button>
+                   </p>
+                </div> <!-- btn-group -->
+
+                </div> <!-- panel-body -->
+            </div> <!-- panel panel-default -->
+
+        </script>
+
+
+<% include partials/boot.ejs %>
+<% include partials/nglib.ejs %>
+<% include partials/footer.ejs %>
