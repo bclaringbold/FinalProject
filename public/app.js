@@ -78,7 +78,7 @@
                 return count;
             };
         }]);
-    app.controller('SurveyDetailCtrl', ['$scope', '$routeParams', 'Surveys', '$location',
+    app.controller('sdcontroller', ['$scope', '$routeParams', 'Surveys', '$location',
         function ($scope, $routeParams, Surveys, $location) {
             $scope.survey = Surveys.get({ id: $routeParams.id });
             $scope.update = function () {
@@ -104,7 +104,7 @@
             })
                 .when('/:id', {
                 templateUrl: '/surveyDetails.html',
-                controller: 'SurveyDetailCtrl'
+                controller: 'sdcontroller'
             });
         }]);
 })();
