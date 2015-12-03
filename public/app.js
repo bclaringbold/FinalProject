@@ -14,16 +14,16 @@
             });
         }]);
     // Controllers ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    app.controller('SurveysController', ['$scope', 'Surveys', function ($scope, Surveys) {
+    app.controller('SurveyController', ['$scope', 'Surveys', function ($scope, Surveys) {
             $scope.editing = [];
             $scope.username = '';
             $scope.userSurveys = [];
             $scope.setUserName = function (userName) {
                 $scope.username = userName; //get the username
                 $scope.surveys = Surveys.query(function () {
-                    $scope.user.Surveys = []; // reset the userSurveys array
+                    $scope.userSurveys = []; // reset the userSurveys array
                     $scope.surveys.forEach(function (survey) {
-                        if (survey.username == $scope.survey) {
+                        if (survey.username == $scope.username) {
                             $scope.userSurveys.push(survey);
                         }
                     });

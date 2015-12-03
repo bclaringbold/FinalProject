@@ -27,9 +27,9 @@
         $scope.setUserName = function(userName) {
             $scope.username = userName; //get the username
             $scope.surveys = Surveys.query(function() {
-                $scope.user.Surveys = []; // reset the userSurveys array
+                $scope.userSurveys = []; // reset the userSurveys array
                 $scope.surveys.forEach(function(survey) {
-                    if (survey.username == $scope.survey) {
+                    if (survey.username == $scope.username) {
                         $scope.userSurveys.push(survey);
                     }
                 });
