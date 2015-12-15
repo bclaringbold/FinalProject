@@ -48,49 +48,58 @@
                     </ul>
 
                    <div class="list-group">
-                   <button type="button" class="list-group-item active" ng-show="!creating" ng-click="create()">Create a New Survey</button>
+                   <button type="button" class="list-group-item active" ng-show="!creating" ng-click="create()">Create a New Survey <i class="fa fa-plus"></i></button>
                    <button type="button" class="list-group-item active" ng-show="creating" ng-click="createcancel()">Create a New Survey</button>
                    <div ng-show="creating" class="list-group-item">
-
-                        <!--<button type="button" title="Create New" ng-show="!creating" ng-click="create()" class="btn btn-success"><i class="fa fa-plus"></i> Create</button>-->
                         
                         <label ng-show="creating">Survey Name:</label> 
                         <input type="text" ng-model="newSurvey" ng-show="creating" id="newSurvey" placeholder="Survey Name" class="form-control">
                         <label ng-show="creating">Number of Questions:</label>
-                        
+                        <select class="form-control" ng-model="questions" id="questions">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                        </select>
                         
                         
                         <label ng-show="creating">Survey Type:</label> 
-                        <label ng-show="creating">Multiple Choice</label><input type="radio" ng-show="creating" name="format" value="Multiple Choice" checked class="form-control">
-                        <label ng-show="creating">Agree / Disagree</label><input type="radio" ng-show="creating" name="format" value="Agree / Disagree" class="form-control">
+                        <label class="radio-inline" ng-show="creating"><input type="radio" ng-model="multiplechoice" ng-show="creating" name="format" value="True" checked>Multiple Choice</label>
+                        <label class="radio-inline" ng-show="creating"><input type="radio" ng-model="multiplechoice" ng-show="creating" name="format" value="False">Agree / Disagree</label>
 
-                        
+                        <br>
                         <label ng-show="creating">Survey Active:</label> 
-                        <input type="datetime" ng-show="creating" name="startdate" class="form-control">
+                        <input type="datetime" ng-model="startdate" ng-show="creating" name="startdate" class="form-control">
                         
                         <label ng-show="creating">Survey Disabled:</label> 
-                        <input type="datetime" ng-show="creating" name="expirydate" class="form-control">
+                        <input type="datetime" ng-model="expirydate" ng-show="creating" name="expirydate" class="form-control">
                         
                         <label ng-show="creating">Question 1:</label>
-                        <input type="text" ng-show="creating" id="question01" placeholder="Question 1" class="form-control">
+                        <input type="text" ng-model="question01" ng-show="creating" id="question01" placeholder="Question 1" class="form-control">
                         <label ng-show="creating">Question 2:</label>
-                        <input type="text" ng-show="creating" id="question02" placeholder="Question 2" class="form-control"> 
+                        <input type="text" ng-model="question02" ng-show="creating" id="question02" placeholder="Question 2" class="form-control"> 
                         <label ng-show="creating">Question 3:</label>
-                        <input type="text" ng-show="creating" id="question03" placeholder="Question 3" class="form-control"> 
+                        <input type="text" ng-model="question03" ng-show="creating" id="question03" placeholder="Question 3" class="form-control"> 
                         <label ng-show="creating">Question 4:</label>
-                        <input type="text" ng-show="creating" id="question04" placeholder="Question 4" class="form-control"> 
+                        <input type="text" ng-model="question04" ng-show="creating" id="question04" placeholder="Question 4" class="form-control"> 
                         <label ng-show="creating">Question 5:</label>
-                        <input type="text" ng-show="creating" id="question05" placeholder="Question 5" class="form-control"> 
+                        <input type="text" ng-model="question05" ng-show="creating" id="question05" placeholder="Question 5" class="form-control"> 
                         <label ng-show="creating">Question 6:</label>
-                        <input type="text" ng-show="creating" id="question06" placeholder="Question 6" class="form-control"> 
+                        <input type="text" ng-model="question06" ng-show="creating" id="question06" placeholder="Question 6" class="form-control"> 
                         <label ng-show="creating">Question 7:</label>
-                        <input type="text" ng-show="creating" id="question07" placeholder="Question 7" class="form-control"> 
+                        <input type="text" ng-model="question07" ng-show="creating" id="question07" placeholder="Question 7" class="form-control"> 
                         <label ng-show="creating">Question 8:</label>
-                        <input type="text" ng-show="creating" id="question08" placeholder="Question 8" class="form-control"> 
+                        <input type="text" ng-model="question08" ng-show="creating" id="question08" placeholder="Question 8" class="form-control"> 
                         <label ng-show="creating">Question 9:</label>
-                        <input type="text" ng-show="creating" id="question09" placeholder="Question 9" class="form-control"> 
+                        <input type="text" ng-model="question09" ng-show="creating" id="question09" placeholder="Question 9" class="form-control"> 
                         <label ng-show="creating">Question 10:</label>
-                        <input type="text" ng-show="creating" id="question10" placeholder="Question 10" class="form-control"> 
+                        <input type="text" ng-model="question10" ng-show="creating" id="question10" placeholder="Question 10" class="form-control"> 
                          
                         
                         

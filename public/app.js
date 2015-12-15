@@ -19,6 +19,7 @@
             $scope.creating = false;
             $scope.username = '';
             $scope.userSurveys = [];
+            //$scope.questions = [];
             $scope.setUserName = function (userName) {
                 $scope.username = userName; //get the username
                 $scope.surveys = Surveys.query(function () {
@@ -35,7 +36,19 @@
                 if (!$scope.newSurvey || $scope.newSurvey.length < 1) {
                     return;
                 }
-                var survey = new Surveys({ name: $scope.newSurvey, username: $scope.username, completed: false });
+                var survey = new Surveys({ name: $scope.newSurvey, username: $scope.username, completed: false, questions: $scope.questions,
+                    multiplechoice: $scope.multiplechoice, startdate: $scope.startdate, expirydate: $scope.expirydate,
+                    question01: $scope.question01,
+                    question02: $scope.question02,
+                    question03: $scope.question03,
+                    question04: $scope.question04,
+                    question05: $scope.question05,
+                    question06: $scope.question06,
+                    question07: $scope.question07,
+                    question08: $scope.question08,
+                    question09: $scope.question09,
+                    question10: $scope.question10
+                });
                 survey.$save(function () {
                     $scope.surveys.push(survey);
                     $scope.newSurvey = ''; // clear textbox
