@@ -21,8 +21,10 @@
     // Controllers ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     app.controller('SurveyController', ['$scope', 'Surveys', function($scope, Surveys) {
         $scope.editing = [];
+        $scope.creating = false;
         $scope.username = '';
         $scope.userSurveys = [];
+        //$scope.questions = [];
 
         $scope.setUserName = function(userName) {
             $scope.username = userName; //get the username
@@ -47,7 +49,15 @@
                 $scope.newSurvey = ''; // clear textbox
             });
         };
-
+        
+        $scope.create = function() {
+            $scope.creating = true;
+        };
+        
+        $scope.createcancel = function() {
+            $scope.creating = false;
+        };         
+        
         $scope.update = function(index) {
             var survey = $scope.surveys[index];
             Surveys.update({ id: survey._id }, survey);

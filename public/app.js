@@ -16,6 +16,7 @@
     // Controllers ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     app.controller('SurveyController', ['$scope', 'Surveys', function ($scope, Surveys) {
             $scope.editing = [];
+            $scope.creating = false;
             $scope.username = '';
             $scope.userSurveys = [];
             $scope.setUserName = function (userName) {
@@ -39,6 +40,12 @@
                     $scope.surveys.push(survey);
                     $scope.newSurvey = ''; // clear textbox
                 });
+            };
+            $scope.create = function () {
+                $scope.creating = true;
+            };
+            $scope.createcancel = function () {
+                $scope.creating = false;
             };
             $scope.update = function (index) {
                 var survey = $scope.surveys[index];

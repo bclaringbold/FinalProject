@@ -5,6 +5,8 @@
         </div> <!-- container -->
 
         <script type="text/ng-template" id="/surveys.html">
+        
+        
             
             <div class="panel panel-primary" ng-init="setUserName('<%= username %>')">
                 <div class="panel-heading">
@@ -19,8 +21,9 @@
                     <ul class="list-group">
                         <li class="list-group-item active">Current Survey's</li>
                         <li ng-repeat="survey in surveys | filter: search | filter: {username: '<%= username %>'}" class="list-group-item">
+                            
                             <div class="btn-group">
-                            <button type="button" title="Edit" ng-show="!editing[$index]" ng-click="edit($index)" class="btn btn-primary "><i class="fa fa-pencil-square-o"></i></button>
+                                <button type="button" title="Edit" ng-show="!editing[$index]" ng-click="edit($index)" class="btn btn-primary "><i class="fa fa-pencil-square-o"></i></button>
                             </div> 
                             
                             <!-- btn-group -->
@@ -45,12 +48,63 @@
                     </ul>
 
                    <div class="list-group">
-                    <div class="list-group-item active">Create a New Survey</div>
-                    <div class="list-group-item">
-                    <input type="text" ng-model="newSurvey" id="newSurvey" placeholder="Create a new Survey" class="form-control">
-                    <br>
-                    <button type="button" title="Create New" ng-click="save()" class="btn btn-success"><i class="fa fa-plus"></i> Create</button>
-                    </div>
+                   <button type="button" class="list-group-item active" ng-show="!creating" ng-click="create()">Create a New Survey</button>
+                   <button type="button" class="list-group-item active" ng-show="creating" ng-click="createcancel()">Create a New Survey</button>
+                   <div ng-show="creating" class="list-group-item">
+
+                        <!--<button type="button" title="Create New" ng-show="!creating" ng-click="create()" class="btn btn-success"><i class="fa fa-plus"></i> Create</button>-->
+                        
+                        <label ng-show="creating">Survey Name:</label> 
+                        <input type="text" ng-model="newSurvey" ng-show="creating" id="newSurvey" placeholder="Survey Name" class="form-control">
+                        <label ng-show="creating">Number of Questions:</label>
+                        
+                        
+                        
+                        <label ng-show="creating">Survey Type:</label> 
+                        <label ng-show="creating">Multiple Choice</label><input type="radio" ng-show="creating" name="format" value="Multiple Choice" checked class="form-control">
+                        <label ng-show="creating">Agree / Disagree</label><input type="radio" ng-show="creating" name="format" value="Agree / Disagree" class="form-control">
+
+                        
+                        <label ng-show="creating">Survey Active:</label> 
+                        <input type="datetime" ng-show="creating" name="startdate" class="form-control">
+                        
+                        <label ng-show="creating">Survey Disabled:</label> 
+                        <input type="datetime" ng-show="creating" name="expirydate" class="form-control">
+                        
+                        <label ng-show="creating">Question 1:</label>
+                        <input type="text" ng-show="creating" id="question01" placeholder="Question 1" class="form-control">
+                        <label ng-show="creating">Question 2:</label>
+                        <input type="text" ng-show="creating" id="question02" placeholder="Question 2" class="form-control"> 
+                        <label ng-show="creating">Question 3:</label>
+                        <input type="text" ng-show="creating" id="question03" placeholder="Question 3" class="form-control"> 
+                        <label ng-show="creating">Question 4:</label>
+                        <input type="text" ng-show="creating" id="question04" placeholder="Question 4" class="form-control"> 
+                        <label ng-show="creating">Question 5:</label>
+                        <input type="text" ng-show="creating" id="question05" placeholder="Question 5" class="form-control"> 
+                        <label ng-show="creating">Question 6:</label>
+                        <input type="text" ng-show="creating" id="question06" placeholder="Question 6" class="form-control"> 
+                        <label ng-show="creating">Question 7:</label>
+                        <input type="text" ng-show="creating" id="question07" placeholder="Question 7" class="form-control"> 
+                        <label ng-show="creating">Question 8:</label>
+                        <input type="text" ng-show="creating" id="question08" placeholder="Question 8" class="form-control"> 
+                        <label ng-show="creating">Question 9:</label>
+                        <input type="text" ng-show="creating" id="question09" placeholder="Question 9" class="form-control"> 
+                        <label ng-show="creating">Question 10:</label>
+                        <input type="text" ng-show="creating" id="question10" placeholder="Question 10" class="form-control"> 
+                         
+                        
+                        
+                        
+                        
+                        </div>
+                        
+                       <div class="btn-group">
+                       <br><p>
+                                <button type="button" title="Save" ng-show="creating" ng-click="save()" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
+                                <button type="button" title="Cancel" ng-show="creating" ng-click="createcancel()" class="btn btn-default"><i class="fa fa-undo"></i> Cancel</button>
+                       </p>
+                       </div> <!-- btn-group -->
+                   
                    </div>
                 </div> <!-- panel-body -->
             </div> <!-- panel panel-default -->
@@ -88,6 +142,8 @@
             </div> <!-- panel panel-default -->
 
         </script>
+        
+        
 
 
 <% include partials/boot.ejs %>
