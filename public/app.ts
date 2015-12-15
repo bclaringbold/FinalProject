@@ -25,7 +25,7 @@
         $scope.username = '';
         $scope.userSurveys = [];
         //$scope.questions = [];
-
+        
         $scope.setUserName = function(userName) {
             $scope.username = userName; //get the username
             $scope.surveys = Surveys.query(function() {
@@ -42,8 +42,14 @@
 
         $scope.save = function() {
             if (!$scope.newSurvey || $scope.newSurvey.length < 1) { return; }
-            var survey = new Surveys({ name: $scope.newSurvey, username: $scope.username, completed: false, questions: $scope.questions, 
-                multiplechoice: $scope.multiplechoice, startdate: $scope.startdate, expirydate: $scope.expirydate, 
+            var survey = new Surveys({ 
+                name: $scope.newSurvey, 
+                username: $scope.username, 
+                completed: false, 
+                questions: $scope.questions, 
+                multiplechoice: $scope.multiplechoice, 
+                startdate: $scope.startdate, 
+                expirydate: $scope.expirydate, 
                 question01: $scope.question01,
                 question02: $scope.question02,
                 question03: $scope.question03,
@@ -59,6 +65,21 @@
             survey.$save(function() {
                 $scope.surveys.push(survey);
                 $scope.newSurvey = ''; // clear textbox
+                $scope.questions = ''; 
+                $scope.multiplechoice = '';
+                $scope.startdate = '';
+                $scope.expirydate = '';
+                $scope.question01 = '';
+                $scope.question02 = '';
+                $scope.question03 = '';
+                $scope.question04 = '';
+                $scope.question05 = '';
+                $scope.question05 = '';
+                $scope.question06 = '';
+                $scope.question07 = '';
+                $scope.question08 = '';
+                $scope.question09 = '';
+                $scope.question10 = '';
                 
             });
         };

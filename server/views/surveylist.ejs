@@ -22,13 +22,15 @@
                         <li class="list-group-item active">Current Survey's</li>
                         <li ng-repeat="survey in surveys | filter: search | filter: {username: '<%= username %>'}" class="list-group-item">
                             
-                            <div class="btn-group">
+                            <!--<div class="btn-group">
                                 <button type="button" title="Edit" ng-show="!editing[$index]" ng-click="edit($index)" class="btn btn-primary "><i class="fa fa-pencil-square-o"></i></button>
                             </div> 
+                            -->
                             
-                            <!-- btn-group -->
-                            <span ng-show="editing[$index]">Complete? </span>
+                            <!-- btn-group 
+                            <span>Complete? </span>
                             <input type="checkbox" ng-model="survey.completed" ng-change="update($index)">
+                            -->
                             
                             <span class="surveys">
                                 <a ng-show="!editing[$index]" href="#/{{survey._id}}" class="completed-{{survey.completed}}">{{survey.name}}</a>
@@ -70,15 +72,15 @@
                         
                         
                         <label ng-show="creating">Survey Type:</label> 
-                        <label class="radio-inline" ng-show="creating"><input type="radio" ng-model="multiplechoice" ng-show="creating" name="format" value="True" checked>Multiple Choice</label>
-                        <label class="radio-inline" ng-show="creating"><input type="radio" ng-model="multiplechoice" ng-show="creating" name="format" value="False">Agree / Disagree</label>
+                        <label class="radio-inline" ng-show="creating"><input type="radio" ng-model="multiplechoice" ng-show="creating" name="multiplechoice" id="multiplechoicetrue" value="True" checked>Multiple Choice</label>
+                        <label class="radio-inline" ng-show="creating"><input type="radio" ng-model="multiplechoice" ng-show="creating" name="multiplechoice" id="multiplechoicefalse" value="False">Agree / Disagree</label>
 
                         <br>
                         <label ng-show="creating">Survey Active:</label> 
-                        <input type="datetime" ng-model="startdate" ng-show="creating" name="startdate" class="form-control">
+                        <input type="date" ng-model="startdate" ng-show="creating" name="startdate" class="form-control">
                         
                         <label ng-show="creating">Survey Disabled:</label> 
-                        <input type="datetime" ng-model="expirydate" ng-show="creating" name="expirydate" class="form-control">
+                        <input type="date" ng-model="expirydate" ng-show="creating" name="expirydate" class="form-control">
                         
                         <label ng-show="creating">Question 1:</label>
                         <input type="text" ng-model="question01" ng-show="creating" id="question01" placeholder="Question 1" class="form-control">
