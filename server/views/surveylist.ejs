@@ -11,13 +11,13 @@
                     <div class="panel-title"><%= title %> for <%= displayName %></div>
                 </div> <!-- panel-heading -->
                 <div class="panel-body">
-                    <h4><span class="badge">{{remainingSurveys()}}</span> To Do's of <span class="badge">{{totalSurveys()}}</span> Remaining</h4>
+                    <h4><span class="badge">{{remainingSurveys()}}</span> Survey's of <span class="badge">{{totalSurveys()}}</span> Remaining</h4>
                     
-                    <h4>Search To Do's:</h4>
-                    <input type="text" ng-model="search.name" id="searchSurvey" placeholder="To Do's to find" class="form-control">
+                    <h4>Search Survey's:</h4>
+                    <input type="text" ng-model="search.name" id="searchSurvey" placeholder="Survey's to find" class="form-control">
                     <br>
                     <ul class="list-group">
-                        <li class="list-group-item active">Current To Do's</li>
+                        <li class="list-group-item active">Current Survey's</li>
                         <li ng-repeat="survey in surveys | filter: search | filter: {username: '<%= username %>'}" class="list-group-item">
                             <div class="btn-group">
                             <button type="button" title="Edit" ng-show="!editing[$index]" ng-click="edit($index)" class="btn btn-primary "><i class="fa fa-pencil-square-o"></i></button>
@@ -26,8 +26,10 @@
                             <!-- btn-group -->
                             <span ng-show="editing[$index]">Complete? </span>
                             <input type="checkbox" ng-model="survey.completed" ng-change="update($index)">
+                            
                             <span class="surveys">
-                            <a ng-show="!editing[$index]" href="#/{{survey._id}}" class="completed-{{survey.completed}}">{{survey.name}}</a></span>
+                                <a ng-show="!editing[$index]" href="#/{{survey._id}}" class="completed-{{survey.completed}}">{{survey.name}}</a>
+                            </span>
 
                             <input ng-show="editing[$index]" type="text" ng-model="survey.name" class="form-control">
                             
@@ -43,7 +45,7 @@
                     </ul>
 
                    <div class="list-group">
-                    <div class="list-group-item active">Create a New To Do</div>
+                    <div class="list-group-item active">Create a New Survey</div>
                     <div class="list-group-item">
                     <input type="text" ng-model="newSurvey" id="newSurvey" placeholder="Create a new Survey" class="form-control">
                     <br>
