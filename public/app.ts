@@ -64,12 +64,50 @@
                 question07: $scope.question07,
                 question08: $scope.question08,
                 question09: $scope.question09,
-                question10: $scope.question10
+                question10: $scope.question10,
+                question01A: $scope.question01A,
+                question01B: $scope.question01B,
+                question01C: $scope.question01C,
+                question01D: $scope.question01D,
+                question02A: $scope.question02A,
+                question02B: $scope.question02B,
+                question02C: $scope.question02C,
+                question02D: $scope.question02D,
+                question03A: $scope.question03A,
+                question03B: $scope.question03B,
+                question03C: $scope.question03C,
+                question03D: $scope.question03D,
+                question04A: $scope.question04A,
+                question04B: $scope.question04B,
+                question04C: $scope.question04C,
+                question04D: $scope.question04D,
+                question05A: $scope.question05A,
+                question05B: $scope.question05B,
+                question05C: $scope.question05C,
+                question05D: $scope.question05D,
+                question06A: $scope.question06A,
+                question06B: $scope.question06B,
+                question06C: $scope.question06C,
+                question06D: $scope.question06D,
+                question07A: $scope.question07A,
+                question07B: $scope.question07B,
+                question07C: $scope.question07C,
+                question07D: $scope.question07D,
+                question08A: $scope.question08A,
+                question08B: $scope.question08B,
+                question08C: $scope.question08C,
+                question08D: $scope.question08D,
+                question09A: $scope.question09A,
+                question09B: $scope.question09B,
+                question09C: $scope.question09C,
+                question09D: $scope.question09D,
+                question10A: $scope.question10A,
+                question10B: $scope.question10B,
+                question10C: $scope.question10C,
+                question10D: $scope.question10D,
+                
             });
             
-                console.log($scope.startdate);
-                console.log($scope.expirydate); 
-
             survey.$save(function() {
                 $scope.surveys.push(survey);
                 

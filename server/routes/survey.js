@@ -5,7 +5,7 @@ var router = express.Router();
 var User = require('../models/user');
 var survey = require('../models/survey');
 
-/* Utility functin to check if user is authenticatd */
+/* Utility functi0n to check if user is authenticatd */
 function requireAuth(req, res, next){
 
   // check if the user is logged in
@@ -26,7 +26,7 @@ router.post('/', requireAuth, function(req, res, next){
 });
 
 // Read All Surveys
-router.get('/', requireAuth, function(req, res, next){
+router.get('/', function(req, res, next){
    survey.find(function(err, surveys){
        if (err) {
          return next(err);}

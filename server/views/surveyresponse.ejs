@@ -1,0 +1,51 @@
+<% include partials/header.ejs %>
+
+<main class="container">
+    
+    <div class="panel panel-default">
+           
+        <div class="panel-heading">
+            <%= survey.name %>
+        </div> <!-- panel-heading -->
+        
+        <div class="panel-body">
+                    
+            <form method="post">
+            <fieldset class="form-group">
+                <label class="form-control">Question 1</label>
+                <label class="form-control"><%= survey.question01 %></label>
+                <label><input class="form-control" type="radio" model="survey.answer01" value="A">A</label>
+                <label><input class="form-control" type="radio" model="survey.answer01" value="B">B</label>
+                <label><input class="form-control" type="radio" model="survey.answer01" value="C">C</label>
+                <label><input class="form-control" type="radio" model="survey.answer01" value="D">D</label>
+            </fieldset>
+            
+            <% if (survey.multiplechoice == 'True' ) { %>
+            TRUE
+            <% } %>
+            
+            <fieldset class="form-group">
+                <label for="Question02">Question 2</label>
+                <input name="Question02" type="text" class="form-control" value="<%= survey.question02 %>" />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="Question03">Question 3</label>
+                <input name="Question03" type="test" class="form-control"  value="<%= survey.question03 %>"/>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="Question04">Question 4</label>
+                <input name="Question04" type="text" class="form-control"  value="<%= survey.question04 %>"/>
+                    </fieldset>
+                    </form>
+                </tbody>
+                
+                
+            </table>
+        </div> <!-- panel-body -->
+        
+    </div><!-- panel panel-default -->
+    
+</main>
+
+<% include partials/boot.ejs %>
+<% include partials/footer.ejs %>
