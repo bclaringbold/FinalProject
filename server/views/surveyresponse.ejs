@@ -12,12 +12,20 @@
                     
             <form method="post">
             <fieldset class="form-group">
-                <label class="form-control">Question 1</label>
-                <label class="form-control"><%= survey.question01 %></label>
-                <label><input class="form-control" type="radio" model="survey.answer01" value="A">A</label>
-                <label><input class="form-control" type="radio" model="survey.answer01" value="B">B</label>
-                <label><input class="form-control" type="radio" model="survey.answer01" value="C">C</label>
-                <label><input class="form-control" type="radio" model="survey.answer01" value="D">D</label>
+                <label class="form-heading">Question 1</label><br>
+                <label class="control-label"><%= survey.question01 %></label>
+                <div class="form-control">
+                    <label class="radio-inline"><input type="radio" name="answer1" model="survey.answer01" value="A">A</label>
+                    <label class="radio-inline"><input type="radio" name="answer1" model="survey.answer01" value="B">B</label>
+                    <label class="radio-inline"><input type="radio" name="answer1" model="survey.answer01" value="C">C</label>
+                    <label class="radio-inline"><input type="radio" name="answer1" model="survey.answer01" value="D">D</label>
+                </div>
+                <div class="form-horizontal">
+                    <label class="form-text"><%= survey.question01A %></label>
+                    <label class="form-text"><%= survey.question01B %></label>
+                    <label class="form-text"><%= survey.question01C %></label>
+                    <label class="form-text"><%= survey.question01D %></label>
+                </div>
             </fieldset>
             
             <% if (survey.multiplechoice == 'True' ) { %>
