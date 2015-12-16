@@ -24,6 +24,7 @@
         $scope.creating = false;
         $scope.username = '';
         $scope.userSurveys = [];
+
         //$scope.questions = [];
         
         $scope.setUserName = function(userName) {
@@ -42,6 +43,10 @@
 
         $scope.save = function() {
             if (!$scope.newSurvey || $scope.newSurvey.length < 1) { return; }
+            
+            $scope.expirydate = new Date($scope.expirydate);
+            $scope.startdate = new Date($scope.startdate); 
+                      
             var survey = new Surveys({ 
                 name: $scope.newSurvey, 
                 username: $scope.username, 
@@ -61,9 +66,13 @@
                 question09: $scope.question09,
                 question10: $scope.question10
             });
+            
+                console.log($scope.startdate);
+                console.log($scope.expirydate); 
 
             survey.$save(function() {
                 $scope.surveys.push(survey);
+                
                 $scope.newSurvey = ''; // clear textbox
                 $scope.questions = ''; 
                 $scope.multiplechoice = '';

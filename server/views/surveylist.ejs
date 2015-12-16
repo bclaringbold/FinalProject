@@ -29,14 +29,14 @@
                             
                             <!-- btn-group 
                             <span>Complete? </span>
-                            <input type="checkbox" ng-model="survey.completed" ng-change="update($index)">
+                            <input type="checkbox" ng-model="completed" ng-change="update($index)">
                             -->
                             
                             <span class="surveys">
                                 <a ng-show="!editing[$index]" href="#/{{survey._id}}" class="completed-{{survey.completed}}">{{survey.name}}</a>
                             </span>
 
-                            <input ng-show="editing[$index]" type="text" ng-model="survey.name" class="form-control">
+                            <input ng-show="editing[$index]" type="text" ng-model="name" class="form-control">
                             
                             <div class="btn-group">
                             <br>
@@ -72,11 +72,18 @@
                         
                         
                         <label ng-show="creating">Survey Type:</label> 
-                        <label class="radio-inline" ng-show="creating"><input type="radio" ng-model="multiplechoice" ng-show="creating" name="multiplechoice" id="multiplechoicetrue" value="True" checked>Multiple Choice</label>
-                        <label class="radio-inline" ng-show="creating"><input type="radio" ng-model="multiplechoice" ng-show="creating" name="multiplechoice" id="multiplechoicefalse" value="False">Agree / Disagree</label>
-
+                        
+                        <label ng-show="creating">
+                                <input type="radio" ng-model="multiplechoice" ng-show="creating" value="true">
+                                Multiple Choice
+                        </label>
+                        <label ng-show="creating">
+                                <input type="radio" ng-model="multiplechoice" ng-show="creating"  value="False">
+                                Agree / Disagree
+                        </label>
                         <br>
-                        <label ng-show="creating">Survey Active:</label> 
+                        
+                        <label ng-show="creating">Survey Active:</label>
                         <input type="date" ng-model="startdate" ng-show="creating" name="startdate" class="form-control">
                         
                         <label ng-show="creating">Survey Disabled:</label> 
@@ -102,11 +109,7 @@
                         <input type="text" ng-model="question09" ng-show="creating" id="question09" placeholder="Question 9" class="form-control"> 
                         <label ng-show="creating">Question 10:</label>
                         <input type="text" ng-model="question10" ng-show="creating" id="question10" placeholder="Question 10" class="form-control"> 
-                         
-                        
-                        
-                        
-                        
+                                                
                         </div>
                         
                        <div class="btn-group">
@@ -131,14 +134,71 @@
                 <div class="panel-body">
                      
                     <div class="panel panel-default">
-                        <div class="panel-heading"><strong>Notes</strong></div>
                         <div class="panel-body">
-                                <textarea ng-model="survey.note" class="form-control"></textarea>
+                        
+                        <label>Survey Name:</label> 
+                        <input type="text" ng-model="survey.name"  id="newSurvey" placeholder="Survey Name" class="form-control">
+                        <label >Number of Questions:</label>
+                        <select class="form-control" ng-model="survey.questions" id="questions">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                        </select>
+                        
+                        
+                        <label >Survey Type:</label> 
+                        <label >
+                                <input type="radio" ng-model="survey.multiplechoice"  value="true">
+                                Multiple Choice
+                        </label>
+                        <label >
+                                <input type="radio" ng-model="survey.multiplechoice"   value="False">
+                                Agree / Disagree
+                        </label>
+                   
+
+                        <br>
+                        <label>Survey Active:</label> 
+                        <input type="datetime" value="{{ survey.startdate }}" ng-model="survey.startdate" name="startdate" class="form-control">
+                        <input type="date" ng-model="survey.startdate"  name="startdate" class="form-control">
+                                                                        
+                        <label>Survey Disabled:</label> 
+                        <input type="datetime" value="{{ survey.expirydate }}" ng-model="survey.expirydate"  name="expirydate" class="form-control">
+                        <input type="date" ng-model="survey.expirydate"  name="expirydate" class="form-control">
+                        
+                        
+                        <label >Question 1:</label>
+                        <input type="text" ng-model="survey.question01"  id="question01" placeholder="Question 1" class="form-control">
+                        <label >Question 2:</label>
+                        <input type="text" ng-model="survey.question02"  id="question02" placeholder="Question 2" class="form-control"> 
+                        <label >Question 3:</label>
+                        <input type="text" ng-model="survey.question03"  id="question03" placeholder="Question 3" class="form-control"> 
+                        <label >Question 4:</label>
+                        <input type="text" ng-model="survey.question04"  id="question04" placeholder="Question 4" class="form-control"> 
+                        <label >Question 5:</label>
+                        <input type="text" ng-model="survey.question05"  id="question05" placeholder="Question 5" class="form-control"> 
+                        <label >Question 6:</label>
+                        <input type="text" ng-model="survey.question06"  id="question06" placeholder="Question 6" class="form-control"> 
+                        <label >Question 7:</label>
+                        <input type="text" ng-model="survey.question07"  id="question07" placeholder="Question 7" class="form-control"> 
+                        <label >Question 8:</label>
+                        <input type="text" ng-model="survey.question08"  id="question08" placeholder="Question 8" class="form-control"> 
+                        <label >Question 9:</label>
+                        <input type="text" ng-model="survey.question09"  id="question09" placeholder="Question 9" class="form-control"> 
+                        <label >Question 10:</label>
+                        <input type="text" ng-model="survey.question10"  id="question10" placeholder="Question 10" class="form-control"> 
+                    
+                        <label >Notes:</label>
+                        <textarea ng-model="survey.note" class="form-control"></textarea>
                         </div> <!-- nested-panel-body -->
                         
-                        <div class="panel-footer">
-                        <h4><strong>Complete? <input type="checkbox" ng-model="survey.completed"></stong></h4>
-                        </div>
                    </div> <!-- nested-panel panel-default -->
                    
                    <div class="btn-group">

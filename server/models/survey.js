@@ -12,7 +12,7 @@ var surveySchema = new Schema({
 	username: String,
 	note: String,
 	questions: String,
-	multiplechoice: Boolean, 
+	multiplechoice: String, 
 	question01: String,
 	question02: String,
 	question03: String,
@@ -75,9 +75,9 @@ var surveySchema = new Schema({
 	question10D: String,
 	salt: String,
 	updated: {type:Date, default: Date.Now},
-	created: {type:Date},
-	startdate: {type: Date},
-	expirydate: {type: Date} 
+	created: {type:Date, default: Date.Now},
+	startdate: {type:Date},
+	expirydate: {type:Date}
 }, {
 	collection: 'survey'
 });
