@@ -4,6 +4,7 @@ var router = express.Router();
 
 var User = require('../models/user');
 var survey = require('../models/survey');
+var Response = require('../models/response');
 
 /* Utility function to check if user is authenticatd */
 function requireAuth(req, res, next){
@@ -89,57 +90,21 @@ router.get('/surveylist', requireAuth, function (req, res, next) {
         });
 });
 
-/* Show Survey List Page */
-router.get('/surveyresponse/:id', function (req, res, next) {
-
-    // create an id variable
-    var id = req.params.id;
-    // use mongoose and our model to find the right user
-    survey.findById(id, function (err, survey) {
+/* Show Statistics Page */
+router.get('/stats', function(req, res, next) {
+    Response.find(function (err, responses) {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            //show the edit view
-            res.render('surveyresponse', {
-            title: 'Response to Survey', 
-            displayName: req.user ? req.user.displayName : '',
-            username: req.user ? req.user.username : '',
-            survey: survey
-
+            res.render('responses/statistics', { 
+                title: 'Survey Statistics',
+                responses: responses,
+                displayName: req.user ? req.user.displayName : ''
             });
         }
-    });
-});
-
-/* Show Survey List Page */
-router.post('/surveyresponse/:id', function (req, res, next) {
-/*
-    var user = new User(req.body);
-    var hashedPassword = user.generateHash(user.password);
-    survey.create({
-        email: req.body.email,
-        password: hashedPassword,
-        displayName: req.body.displayName,
-        username: req.body.username,
-        provider: 'local',
-        created: Date.now(),
-        updated: Date.now()
-    }, function (err, User) {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        }
-        else {
-            res.redirect('/users');
-        }
-    });
-    
-});*/
-
-
-
+   });
 });
 
 module.exports = router;
