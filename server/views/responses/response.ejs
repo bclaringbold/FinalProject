@@ -6,45 +6,97 @@
            
         <div class="panel-heading">
             <%= survey.name %>
+            <%= survey.questions %>
+            <%= survey.multiplechoice %>
         </div> <!-- panel-heading -->
         
         <div class="panel-body">
                     
             <form method="post">
+            <input type="hidden" model="response.surveyid" value="<%= survey.id %>">
+            <input type="hidden" model="response.name" value="<%= survey.name %>">
+            <input type="hidden" model="response.questions" value="<%= survey.questions %>">
+            <input type="hidden" model="response.multiplechoice" value="<%= survey.multiplechoice %>">
+            
+            <% for (var i = 0; i <  survey.questions; i++) { %>
+            <% } %>
+            
             <fieldset class="form-group">
                 <label class="form-heading">Question 1</label><br>
-                <label class="control-label"><%= survey.question01 %></label>
-                <div class="form-control">
-                    <label class="radio-inline"><input type="radio" name="answerq01" model="response.answerq01" value="A">A</label>
-                    <label class="radio-inline"><input type="radio" name="answerq01" model="response.answerq01" value="B">B</label>
-                    <label class="radio-inline"><input type="radio" name="answerq01" model="response.answerq01" value="C">C</label>
-                    <label class="radio-inline"><input type="radio" name="answerq01" model="response.answerq01" value="D">D</label>
+                <label class="control-label"><%= survey.question01%></label>
+                <div class="panel-body">
+                    <label class="radio"><input type="radio" name="answerq01" model="response.answerq01" value="A">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question01A %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq01" model="response.answerq01" value="B">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question01B %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq01" model="response.answerq01" value="C">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question01C %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Disagree</label><br>
+                    <% } %>
+                    </label>
+                                      
+                    <label class="radio"><input type="radio" name="answerq01" model="response.answerq01" value="D">                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question01D %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Disagree</label><br>
+                    <% } %>
+                    </label>
                 </div>
-                <% if (survey.multiplechoice == "true" ) { %>
-                <div class="form-horizontal">
-                    <label class="form-text"><%= survey.question01A %></label>
-                    <label class="form-text"><%= survey.question01B %></label>
-                    <label class="form-text"><%= survey.question01C %></label>
-                    <label class="form-text"><%= survey.question01D %></label>
-                </div>
-                <% } %>
-            </fieldset>
-            
-            <%= survey.multiplechoice %>
                 
+                <label class="form-heading">Question 21</label><br>
+                <label class="control-label"><%= survey.question02%></label>
+                <div class="panel-body">
+                    <label class="radio"><input type="radio" name="answerq02" model="response.answerq02" value="A">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question02A %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq02" model="response.answerq02" value="B">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question02B %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq02" model="response.answerq02" value="C">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question02C %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Disagree</label><br>
+                    <% } %>
+                    </label>
+                                      
+                    <label class="radio"><input type="radio" name="answerq02" model="response.answerq02" value="D">                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question02D %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Disagree</label><br>
+                    <% } %>
+                    </label>
+                </div>                       
+                
+            </fieldset>
             
-            <fieldset class="form-group">
-                <label for="Question02">Question 2</label>
-                <input name="Question02" type="text" class="form-control" value="<%= survey.question02 %>" />
-            </fieldset>
-            <fieldset class="form-group">
-                <label for="Question03">Question 3</label>
-                <input name="Question03" type="test" class="form-control"  value="<%= survey.question03 %>"/>
-            </fieldset>
-            <fieldset class="form-group">
-                <label for="Question04">Question 4</label>
-                <input name="Question04" type="text" class="form-control"  value="<%= survey.question04 %>"/>
-             </fieldset>
+                            
+            
+
              <fieldset class="form-group text-right">
                 <button type="submit" class="btn btn-success" value="Submit"/><i class="fa fa-save"></i> Submit</button>
             </fieldset>
