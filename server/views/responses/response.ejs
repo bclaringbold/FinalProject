@@ -57,7 +57,7 @@
                     </label>
                 </div>
                 
-                <label class="form-heading">Question 21</label><br>
+                <label class="form-heading">Question 2</label><br>
                 <label class="control-label"><%= survey.question02%></label>
                 <div class="panel-body">
                     <label class="radio"><input type="radio" name="answerq02" model="response.answerq02" value="A">
@@ -90,7 +90,289 @@
                         <label class="form-text">Strongly Disagree</label><br>
                     <% } %>
                     </label>
-                </div>                       
+                </div> 
+                
+                <label class="form-heading">Question 3</label><br>
+                <label class="control-label"><%= survey.question03%></label>
+                <div class="panel-body">
+                    <label class="radio"><input type="radio" name="answerq03" model="response.answerq03" value="A">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question03A %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq03" model="response.answerq03" value="B">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question03B %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq03" model="response.answerq03" value="C">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question03C %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Disagree</label><br>
+                    <% } %>
+                    </label>
+                                      
+                    <label class="radio"><input type="radio" name="answerq03" model="response.answerq03" value="D">                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question03D %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Disagree</label><br>
+                    <% } %>
+                    </label>
+                </div>
+                
+                <label class="form-heading">Question 4</label><br>
+                <label class="control-label"><%= survey.question04%></label>
+                <div class="panel-body">
+                    <label class="radio"><input type="radio" name="answerq04" model="response.answerq04" value="A">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question04A %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq04" model="response.answerq04" value="B">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question04B %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq04" model="response.answerq04" value="C">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question04C %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Disagree</label><br>
+                    <% } %>
+                    </label>
+                                      
+                    <label class="radio"><input type="radio" name="answerq04" model="response.answerq04" value="D">                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question04D %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Disagree</label><br>
+                    <% } %>
+                    </label>
+                </div>
+                
+                <label class="form-heading">Question 5</label><br>
+                <label class="control-label"><%= survey.question05%></label>
+                <div class="panel-body">
+                    <label class="radio"><input type="radio" name="answerq05" model="response.answerq05" value="A">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question05A %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq05" model="response.answerq05" value="B">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question05B %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq05" model="response.answerq05" value="C">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question05C %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Disagree</label><br>
+                    <% } %>
+                    </label>
+                                      
+                    <label class="radio"><input type="radio" name="answerq05" model="response.answerq05" value="D">                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question05D %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Disagree</label><br>
+                    <% } %>
+                    </label>
+                </div>
+                
+                <label class="form-heading">Question 6</label><br>
+                <label class="control-label"><%= survey.question06%></label>
+                <div class="panel-body">
+                    <label class="radio"><input type="radio" name="answerq06" model="response.answerq06" value="A">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question06A %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq06" model="response.answerq06" value="B">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question06B %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq06" model="response.answerq06" value="C">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question06C %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Disagree</label><br>
+                    <% } %>
+                    </label>
+                                      
+                    <label class="radio"><input type="radio" name="answerq06" model="response.answerq06" value="D">                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question06D %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Disagree</label><br>
+                    <% } %>
+                    </label>
+                </div>
+                
+                <label class="form-heading">Question 7</label><br>
+                <label class="control-label"><%= survey.question07%></label>
+                <div class="panel-body">
+                    <label class="radio"><input type="radio" name="answerq07" model="response.answerq07" value="A">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question07A %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq07" model="response.answerq07" value="B">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question07B %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq07" model="response.answerq07" value="C">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question07C %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Disagree</label><br>
+                    <% } %>
+                    </label>
+                                      
+                    <label class="radio"><input type="radio" name="answerq07" model="response.answerq07" value="D">                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question07D %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Disagree</label><br>
+                    <% } %>
+                    </label>
+                </div>
+                
+                <label class="form-heading">Question 8</label><br>
+                <label class="control-label"><%= survey.question08%></label>
+                <div class="panel-body">
+                    <label class="radio"><input type="radio" name="answerq08" model="response.answerq08" value="A">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question08A %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq08" model="response.answerq08" value="B">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question08B %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq08" model="response.answerq08" value="C">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question08C %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Disagree</label><br>
+                    <% } %>
+                    </label>
+                                      
+                    <label class="radio"><input type="radio" name="answerq08" model="response.answerq08" value="D">                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question08D %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Disagree</label><br>
+                    <% } %>
+                    </label>
+                </div>
+                
+                <label class="form-heading">Question 9</label><br>
+                <label class="control-label"><%= survey.question09%></label>
+                <div class="panel-body">
+                    <label class="radio"><input type="radio" name="answerq09" model="response.answerq09" value="A">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question09A %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq09" model="response.answerq09" value="B">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question09B %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq09" model="response.answerq09" value="C">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question09C %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Disagree</label><br>
+                    <% } %>
+                    </label>
+                                      
+                    <label class="radio"><input type="radio" name="answerq09" model="response.answerq09" value="D">                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question09D %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Disagree</label><br>
+                    <% } %>
+                    </label>
+                </div>
+                
+                <label class="form-heading">Question 10</label><br>
+                <label class="control-label"><%= survey.question10%></label>
+                <div class="panel-body">
+                    <label class="radio"><input type="radio" name="answerq10" model="response.answerq10" value="A">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question10A %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq10" model="response.answerq10" value="B">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question10B %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Agree</label><br>
+                    <% } %>
+                    </label>
+                                        
+                    <label class="radio"><input type="radio" name="answerq10" model="response.answerq10" value="C">
+                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question10C %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Disagree</label><br>
+                    <% } %>
+                    </label>
+                                      
+                    <label class="radio"><input type="radio" name="answerq10" model="response.answerq10" value="D">                    <% if (survey.multiplechoice == "true" ) { %>
+                        <label class="form-text"><%= survey.question10D %></label><br> 
+                    <% } else { %>
+                        <label class="form-text">Strongly Disagree</label><br>
+                    <% } %>
+                    </label>
+                </div>
+                
+                                      
                 
             </fieldset>
             
