@@ -16,7 +16,7 @@ function requireAuth(req, res, next){
 
 /* Render Users main page. */
 router.get('/', requireAuth, function (req, res, next) {
-    User.find(function (err, users) {
+    User.find(function (err, user) {
         if (err) {
             console.log(err);
             res.end(err);
@@ -24,12 +24,35 @@ router.get('/', requireAuth, function (req, res, next) {
         else {
             res.render('users/index', {
                 title: 'Users',
-                users: users,
+                user: user,
                 displayName: req.user ? req.user.displayName : ''
             });
         }
     });
 });
+
+
+/* Render the My Account Page */
+router.get('/myaccount', requireAuth, function (req, res, next) {
+    // create an id variable
+    var id = req.user.id;
+    // use mongoose and our model to find the right user
+    User.findById(id, function (err, user) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            //show the edit view
+            res.render('users/edit', {
+                title: 'Edit My Account',
+                user: user,
+                displayName: req.user ? req.user.displayName : ''
+           });
+        }
+    });
+});
+
 
 /* Render the Add Users Page */
 router.get('/add', requireAuth, function (req, res, next) {
