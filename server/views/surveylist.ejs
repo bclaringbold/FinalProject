@@ -248,7 +248,12 @@
                      
                     <div class="panel panel-default">
                         <div class="panel-body">
+                        <label>Survey ID:</label>
+                        <input type="text" ng-value="survey._id"  id="surveyID" class="form-control" readonly>
                         
+                        <label>Survey URL:</label>
+                        <input type="text" value="https://mysimplesurvey.herokuapp.com/responses/{{ survey._id }}"  id="surveyURL" class="form-control" readonly>
+
                         <label>Survey Name:</label> 
                         <input type="text" ng-model="survey.name"  id="newSurvey" placeholder="Survey Name" class="form-control">
                         <label >Number of Questions:</label>

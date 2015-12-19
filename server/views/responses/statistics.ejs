@@ -24,12 +24,9 @@
                         <th>Answer 9</th>
                         <th>Answer 10</th>
                         <th>Date Created</th>
-                        <th>Date Updated</th>
-                        <th></th>
-                    </tr>
+                   </tr>
                 </thead>
                 <tbody>
-                <%= responses.length %>
                 <% for (var i = 0; i < responses.length; i++) { %>
                 <tr>
                     <td>
@@ -68,15 +65,12 @@
                     <td>
                         <%= responses[i].answerq10 %>
                     </td>
-                                        
                     <td>
                         <% var date = new Date(responses[i].created);
                          var dateString = date.toDateString() + " " + date.toLocaleTimeString(); %>
                         <%= dateString %>
                     </td>
-                    <td>
 
-                    </td>
                 </tr>
                 <% } %>
                 </tbody>
