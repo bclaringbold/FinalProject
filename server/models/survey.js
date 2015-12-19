@@ -9,6 +9,7 @@ var Schema = mongoose.Schema;
 var surveySchema = new Schema({
 	name: String,
 	completed: Boolean,
+	active: String,
 	username: String,
 	note: String,
 	questions: String,

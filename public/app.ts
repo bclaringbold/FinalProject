@@ -50,7 +50,8 @@
             var survey = new Surveys({ 
                 name: $scope.newSurvey, 
                 username: $scope.username, 
-                completed: false, 
+                completed: false,
+                active: $scope.active, 
                 questions: $scope.questions, 
                 multiplechoice: $scope.multiplechoice, 
                 startdate: $scope.startdate, 

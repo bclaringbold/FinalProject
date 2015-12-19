@@ -19,7 +19,8 @@ router.get('/', function(req, res, next) {
 router.get('/:id', function (req, res, next) {
 
     // create an id variable
-    var id = req.params.id;
+    var id = req.params.id
+    
     // use mongoose and our model to find the right user
     survey.findById(id, function (err, survey) {
         if (err) {
@@ -27,14 +28,21 @@ router.get('/:id', function (req, res, next) {
             res.end(err);
         }
         else {
-            //show the edit view
-            res.render('responses/response', {
-            title: 'Respond to Survey', 
-            displayName: req.user ? req.user.displayName : '',
-            username: req.user ? req.user.username : '',
-            survey: survey
+                if (survey.active == false) {
+                    res.redirect('/');
+                }
+                
+                else {
+                    //show the edit view
+                    res.render('responses/response', {
+                    title: 'Respond to Survey', 
+                    displayName: req.user ? req.user.displayName : '',
+                    username: req.user ? req.user.username : '',
+                    survey: survey
 
-            });
+                });
+              } 
+           
         }
     });
 });
