@@ -5,22 +5,18 @@
     <div class="panel panel-default">
            
         <div class="panel-heading">
-            <%= survey.name %>
-            <%= survey.questions %>
-            <%= survey.multiplechoice %>
+            <h2><%= survey.name %></h2>
         </div> <!-- panel-heading -->
         
         <div class="panel-body">
                     
             <form method="post">
-            <input type="hidden" model="response.surveyid" value="<%= survey.id %>">
-            <input type="hidden" model="response.name" value="<%= survey.name %>">
-            <input type="hidden" model="response.questions" value="<%= survey.questions %>">
-            <input type="hidden" model="response.multiplechoice" value="<%= survey.multiplechoice %>">
+            <input type="hidden" name="surveyid" model="response.surveyid" value="<%= survey.id %>">
+            <input type="hidden" name="name" model="response.name" value="<%= survey.name %>">
+            <input type="hidden" name="questions" model="response.questions" value="<%= survey.questions %>">
+            <input type="hidden" name="multiplechoice" model="response.multiplechoice" value="<%= survey.multiplechoice %>">
             
-            <% for (var i = 0; i <  survey.questions; i++) { %>
-            <% } %>
-            
+
             <fieldset class="form-group">
                 <% if (survey.questions > 0) { %>
                 <label class="form-heading">Question 1</label><br>

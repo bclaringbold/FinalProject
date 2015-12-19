@@ -29,7 +29,7 @@ router.get('/:id', function (req, res, next) {
         else {
             //show the edit view
             res.render('responses/response', {
-            title: 'Response to Survey', 
+            title: 'Respond to Survey', 
             displayName: req.user ? req.user.displayName : '',
             username: req.user ? req.user.username : '',
             survey: survey
@@ -44,9 +44,10 @@ router.post('/:id', function (req, res, next) {
     //var response = new Response(req.body);
     
     Response.create({
-        name: req.body.name,
+       name: req.body.name,
 	   surveyid: req.body.surveyid,
 	   questions: req.body.questions,
+       multiplechoice: req.body.multiplechoice,
 	   answerq01: req.body.answerq01,
 	   answerq02: req.body.answerq02,
 	   answerq03: req.body.answerq03,

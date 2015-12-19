@@ -11,9 +11,18 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>User ID</th>
-                        <th>Display Name</th>
-                        <th>Email</th>
+                        <th>Survey ID</th>
+                        <th>Survey Name</th>
+                        <th>Answer 1</th>
+                        <th>Answer 2</th>
+                        <th>Answer 3</th>
+                        <th>Answer 4</th>
+                        <th>Answer 5</th>
+                        <th>Answer 6</th>
+                        <th>Answer 7</th>
+                        <th>Answer 8</th>
+                        <th>Answer 9</th>
+                        <th>Answer 10</th>
                         <th>Date Created</th>
                         <th>Date Updated</th>
                         <th></th>
@@ -24,7 +33,10 @@
                 <% for (var i = 0; i < responses.length; i++) { %>
                 <tr>
                     <td>
-                        
+                        <%= responses[i].surveyid %>    
+                    </td>
+                    <td>
+                        <%= responses[i].name %>    
                     </td>
                     <td>
                         <%= responses[i].answerq01 %>
@@ -32,7 +44,31 @@
                     <td>
                         <%= responses[i].answerq02 %>
                     </td>
-                    
+                    <td>
+                        <%= responses[i].answerq03 %>
+                    </td>
+                    <td>
+                        <%= responses[i].answerq04 %>
+                    </td>
+                    <td>
+                        <%= responses[i].answerq05 %>
+                    </td>
+                    <td>
+                        <%= responses[i].answerq06 %>
+                    </td>
+                    <td>
+                        <%= responses[i].answerq07 %>
+                    </td>
+                    <td>
+                        <%= responses[i].answerq08 %>
+                    </td>
+                    <td>
+                        <%= responses[i].answerq09 %>
+                    </td>
+                    <td>
+                        <%= responses[i].answerq10 %>
+                    </td>
+                                        
                     <td>
                         <% var date = new Date(responses[i].created);
                          var dateString = date.toDateString() + " " + date.toLocaleTimeString(); %>

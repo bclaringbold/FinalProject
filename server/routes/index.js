@@ -25,6 +25,17 @@ router.get('/', function(req, res, next) {
    });
 });
 
+/* POST Survey search on home page. */
+
+router.post('/', function(req, res, next) {
+  var surveyid = req.body.surveyid;
+  res.redirect('responses/'+surveyid)
+  //, { 
+   // title: 'Survey View',
+   // displayName: req.user ? req.user.displayName : ''
+   //});
+});
+/*    */
 
 /* Render Login page. */
 router.get('/login', function (req, res, next) {

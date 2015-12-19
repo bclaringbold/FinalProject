@@ -10,6 +10,7 @@ var responseSchema = new Schema({
 	name: String,
 	surveyid: String,
 	questions: String,
+	multiplechoice: String,
 	answerq01: String,
 	answerq02: String,
 	answerq03: String,

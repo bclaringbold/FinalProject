@@ -1,7 +1,18 @@
 <%- include partials/header.ejs %>
 
 <p>Welcome.</p>
+
 <a href="/responses">Survey</a>
+
+<form method="post">
+                <fieldset class="form-group">
+                    <label>Enter Survey ID:</label>
+                    <input type="text" class="form-control" name="surveyid" required autofocus/>
+                 </fieldset>
+                <fieldset class="form-group text-right">
+                    <input type="submit" class="btn btn-success" value="Find"/>
+               </fieldset>
+            </form>
 
 <% include partials/boot.ejs %>
 <%- include partials/footer.ejs %>
