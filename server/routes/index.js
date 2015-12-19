@@ -20,7 +20,7 @@ function requireAuth(req, res, next){
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
-    title: 'Survey Site',
+    title: 'My Simple Survey',
     displayName: req.user ? req.user.displayName : ''
    });
 });
@@ -30,12 +30,8 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   var surveyid = req.body.surveyid;
   res.redirect('responses/'+surveyid)
-  //, { 
-   // title: 'Survey View',
-   // displayName: req.user ? req.user.displayName : ''
-   //});
 });
-/*    */
+
 
 /* Render Login page. */
 router.get('/login', function (req, res, next) {

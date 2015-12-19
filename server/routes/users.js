@@ -78,7 +78,7 @@ router.get('/:id', requireAuth, function (req, res, next) {
                 title: 'Edit a User',
                 user: user,
                 displayName: req.user ? req.user.displayName : ''
-            });
+           });
         }
     });
 });
