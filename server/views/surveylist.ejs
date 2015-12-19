@@ -76,7 +76,7 @@
                                 Multiple Choice
                         </label>
                         <label ng-show="creating">
-                                <input type="radio" ng-model="multiplechoice" ng-show="creating"  value="False">
+                                <input type="radio" ng-model="multiplechoice" ng-show="creating"  value="false">
                                 Agree / Disagree
                         </label>
                         <br>
@@ -305,7 +305,7 @@
                         
                         <label >Question 1:</label>
                         <input type="text" ng-model="survey.question01"  id="question01" placeholder="Question 1" class="form-control">
-                        <div class="list-group" ng-show="survey.multiplechoice">
+                        <div class="list-group" ng-show="survey.multiplechoice == 'true'">
                                 <label>Question 1 - Answer Option A:</label>
                                 <input type="text" ng-model="survey.question01A"  id="question01A" placeholder="Question 1 - Answer Option A" class="form-control">
                                 <label >Question 1 - Answer Option B:</label>
@@ -318,7 +318,7 @@
                         
                         <label >Question 2:</label>
                         <input type="text" ng-model="survey.question02"  id="question02" placeholder="Question 2" class="form-control"> 
-                        <div class="list-group" ng-show="survey.multiplechoice">
+                        <div class="list-group" ng-show="survey.multiplechoice == 'true'">
                                 <label>Question 2 - Answer Option A:</label>
                                 <input type="text" ng-model="survey.question02A"  id="question02A" placeholder="Question 2 - Answer Option A" class="form-control">
                                 <label >Question 2 - Answer Option B:</label>
@@ -331,7 +331,7 @@
                         
                         <label >Question 3:</label>
                         <input type="text" ng-model="survey.question03"  id="question03" placeholder="Question 3" class="form-control"> 
-                        <div class="list-group" ng-show="survey.multiplechoice">
+                        <div class="list-group" ng-show="survey.multiplechoice == 'true'">
                                 <label>Question 3 - Answer Option A:</label>
                                 <input type="text" ng-model="survey.question03A"  id="question03A" placeholder="Question 3 - Answer Option A" class="form-control">
                                 <label >Question 3 - Answer Option B:</label>
@@ -344,7 +344,7 @@
                         
                         <label >Question 4:</label>
                         <input type="text" ng-model="survey.question04"  id="question04" placeholder="Question 4" class="form-control"> 
-                        <div class="list-group" ng-show="survey.multiplechoice">
+                        <div class="list-group" ng-show="survey.multiplechoice == 'true'">
                                 <label>Question 4 - Answer Option A:</label>
                                 <input type="text" ng-model="survey.question04A"  id="question04A" placeholder="Question 4 - Answer Option A" class="form-control">
                                 <label >Question 4 - Answer Option B:</label>
@@ -357,7 +357,7 @@
                         
                         <label >Question 5:</label>
                         <input type="text" ng-model="survey.question05"  id="question05" placeholder="Question 5" class="form-control"> 
-                        <div class="list-group" ng-show="survey.multiplechoice">
+                        <div class="list-group" ng-show="survey.multiplechoice == 'true'">
                                 <label>Question 5 - Answer Option A:</label>
                                 <input type="text" ng-model="survey.question05A"  id="question05A" placeholder="Question 5 - Answer Option A" class="form-control">
                                 <label >Question 5 - Answer Option B:</label>
@@ -370,7 +370,7 @@
                         
                         <label >Question 6:</label>
                         <input type="text" ng-model="survey.question06"  id="question06" placeholder="Question 6" class="form-control"> 
-                        <div class="list-group" ng-show="survey.multiplechoice">
+                        <div class="list-group" ng-show="survey.multiplechoice == 'true'">
                                 <label>Question 6 - Answer Option A:</label>
                                 <input type="text" ng-model="survey.question06A"  id="question06A" placeholder="Question 6 - Answer Option A" class="form-control">
                                 <label >Question 6 - Answer Option B:</label>
@@ -383,7 +383,7 @@
                         
                         <label >Question 7:</label>
                         <input type="text" ng-model="survey.question07"  id="question07" placeholder="Question 7" class="form-control"> 
-                        <div class="list-group" ng-show="survey.multiplechoice">
+                        <div class="list-group" ng-show="survey.multiplechoice == 'true'">
                                 <label>Question 7 - Answer Option A:</label>
                                 <input type="text" ng-model="survey.question07A"  id="question07A" placeholder="Question 7 - Answer Option A" class="form-control">
                                 <label >Question 7 - Answer Option B:</label>
@@ -396,7 +396,7 @@
                         
                         <label >Question 8:</label>
                         <input type="text" ng-model="survey.question08"  id="question08" placeholder="Question 8" class="form-control"> 
-                        <div class="list-group" ng-show="survey.multiplechoice">
+                        <div class="list-group" ng-show="survey.multiplechoice == 'true'">
                                 <label>Question 8 - Answer Option A:</label>
                                 <input type="text" ng-model="survey.question08A"  id="question08A" placeholder="Question 8 - Answer Option A" class="form-control">
                                 <label >Question 8 - Answer Option B:</label>
@@ -409,7 +409,7 @@
                         
                         <label >Question 9:</label>
                         <input type="text" ng-model="survey.question09"  id="question09" placeholder="Question 9" class="form-control"> 
-                        <div class="list-group" ng-show="survey.multiplechoice">
+                        <div class="list-group" ng-show="survey.multiplechoice == 'true'">
                                 <label>Question 9 - Answer Option A:</label>
                                 <input type="text" ng-model="survey.question09A"  id="question09A" placeholder="Question 9 - Answer Option A" class="form-control">
                                 <label >Question 9 - Answer Option B:</label>
@@ -422,7 +422,7 @@
                         
                         <label >Question 10:</label>
                         <input type="text" ng-model="survey.question10"  id="question10" placeholder="Question 10" class="form-control"> 
-                        <div class="list-group" ng-show="survey.multiplechoice">
+                        <div class="list-group" ng-show="survey.multiplechoice == 'true'">
                                 <label>Question 10 - Answer Option A:</label>
                                 <input type="text" ng-model="survey.question10A"  id="question10A" placeholder="Question 10 - Answer Option A" class="form-control">
                                 <label>Question 10 - Answer Option B:</label>
